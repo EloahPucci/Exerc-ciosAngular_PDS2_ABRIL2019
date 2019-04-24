@@ -1,3 +1,65 @@
-<h1>
-  {{title}}
-</h1>
+<h3>{{titEx1}}</h3>
+<ul>
+  <li *ngFor="let nome of nomes">
+    {{nome}}
+  </li>
+</ul>
+
+<hr>
+
+<h3>{{titEx2}}</h3>
+<ul>
+  <li *ngFor="let nome of nomes, let i = index">
+    Nome da pessoa é: {{nome}}, e está na posição {{i + 1}}
+  </li>
+</ul>
+
+<hr>
+
+<h3>{{titEx3}}</h3>
+<ul>
+  <li *ngFor="let nome2 of nomes2, let i2 = index">
+    Nome da pessoa é: {{nome2}}, e está na posição {{i2 + 1}}
+  </li>
+</ul>
+<p *ngIf="nomes2.length == 0">Nenhum nome foi encontrado usando *ngIf</p>
+
+<p [hidden]="nomes2.length > 0">Nenhum nome foi encontrado usando hidden</p>
+
+<hr>
+
+<h3>{{titEx4}}</h3>
+<input #box placeholder="Digite um nome"/>
+<button (click)="buscar(box.value)">OK</button>
+
+<hr>
+
+
+<h3>{{titEx5}}</h3>
+<h5>{{txt1}}</h5>
+<input #box1 placeholder="Digite um nome"/>
+<button (click)="buscar1(box1.value)">OK</button>
+<ul *ngFor="let nomeFiltro1 of nomesFiltro1">
+  <li>{{nomeFiltro1}}</li>
+</ul>
+
+<h5>{{txt2}}</h5>
+<input #box2 placeholder="Digite um nome"/>
+<button (click)="buscar2(box2.value)">OK</button>
+<ul *ngFor="let nomeFiltro2 of nomesFiltro2">
+  <li>{{nomeFiltro2}}</li>
+</ul>
+
+<h5>{{txt3}}</h5>
+<input #box3 placeholder="Digite um nome"/>
+<button (click)="buscar3(box3.value)">OK</button>
+<ul *ngFor="let nomeFiltro3 of nomesFiltro3">
+  <li>{{nomeFiltro3}}</li>
+</ul>
+
+<h5>{{txt4}}</h5>
+<input #box4 placeholder="Digite um nome"/>
+<button (click)="buscar4(box4.value)">OK</button>
+<ul *ngFor="let nomeFiltro4 of nomesFiltro4">
+  <li>{{nomeFiltro4}}</li>
+</ul>
